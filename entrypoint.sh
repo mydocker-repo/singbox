@@ -1,4 +1,4 @@
-#! /usr/bin/env sh
+#! /usr/bin/env bash
 set -e
 _UUID=$(cat /proc/sys/kernel/random/uuid)
 [ ${#hostname} -eq 36 ] && UUID=${UUID:-$HOSTNAME}

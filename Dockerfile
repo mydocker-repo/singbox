@@ -8,4 +8,3 @@ COPY --from=builder /etc/ssl/certs/* /etc/ssl/certs/
 RUN mkdir /etc/sing-box
 COPY config.json  /etc/sing-box/config.json 
 
-ENTRYPOINT ["/usr/local/bin/sing-box run -D /etc/sing-box"]

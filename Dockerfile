@@ -7,6 +7,7 @@ COPY --from=builder /usr/local/bin/sing-box /usr/local/bin/sing-box
 COPY --from=builder /etc/ssl/certs/* /etc/ssl/certs/
 RUN mkdir /etc/sing-box
 COPY config.json  /etc/sing-box/config.json 
+COPY entrypoint.sh /entrypoint.sh
+RUN chmod +x /entrypoint.sh
 
-
-CMD ["/usr/local/bin/sing-box" "run" "-c" "/etc/sing-box/config.json"]
+ENTRYPOINT ["/entrypoint.sh"]

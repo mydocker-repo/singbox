@@ -4,7 +4,7 @@ FROM library/nginx:1.25
 COPY nginx.conf /etc/nginx/nginx.conf
 
 COPY --from=singbox /usr/bin/sing-box /usr/local/bin/sing-box
-COPY --from=singbox /etc/sing-box /etc/sing-box
+RUN mkdir /etc/sing-box
 COPY config.json  /etc/sing-box/
 # 安装 supervisord（Debian 系用 apt）
 RUN apt-get update && \

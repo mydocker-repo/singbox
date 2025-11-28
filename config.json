@@ -2,6 +2,7 @@
   "inbounds": [
     {
         "type":"vmess",
+        "tag":"vmess-in",
         "listen":"::",
         "listen_port":35551,
         "tcp_fast_open":false,
@@ -14,7 +15,7 @@
         ],
         "transport":{
             "type":"ws",
-            "path":"/blackmyth",
+            "path":"/vmess",
             "max_early_data":2048,
             "early_data_header_name":"Sec-WebSocket-Protocol"
         },

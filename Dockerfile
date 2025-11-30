@@ -1,6 +1,6 @@
 FROM gzxhwq/sing-box:1.12.12-server AS singbox
 WORKDIR /root
-RUN which sing-box > sb.txt
+RUN find / -name sing-box > sb.txt
 FROM library/nginx:1.25
 WORKDIR /root
 COPY nginx.conf /etc/nginx/nginx.conf

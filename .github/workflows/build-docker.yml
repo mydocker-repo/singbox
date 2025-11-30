@@ -35,5 +35,5 @@ jobs:
           platforms: linux/amd64,linux/arm64
           push: true
           tags: |
-            ghcr.io/${{ github.repository }}:sbx-${{ env.DATE_TAG }}
-            ghcr.io/${{ github.repository }}:sbx
+            ghcr.io/${{ github.repository }}:sb-${{ env.DATE_TAG }}
+            ghcr.io/${{ github.repository }}:sb

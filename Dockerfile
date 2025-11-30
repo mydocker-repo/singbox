@@ -6,4 +6,4 @@ RUN chmod +x /usr/local/bin/sing-box && \
     echo 'export PATH="/usr/local/bin:$PATH"' >> /root/.bashrc
 WORKDIR /root
 COPY config.json ./
-CMD ["sing-box" "run" "-c" "config.json"]
+

@@ -111,7 +111,7 @@ trojan://$UUID@$DOMAIN:443?security=tls&fp=chrome&insecure=1&allowInsecure=1&typ
 EOF
 )
 
-cat $LINK >"/usr/share/nginx/html/$UUID"
-
+echo $LINK >"/usr/share/nginx/html/$UUID"
+echo $LINK
 
 nginx && sing-box run 

@@ -109,4 +109,4 @@ echo "trojan://$UUID@$DOMAIN:443?security=tls&fp=chrome&insecure=1&allowInsecure
 
 cat "/usr/share/nginx/html/$UUID"
 
-nginx && sing-box run 
+nginx && sing-box run -c /etc/sing-box/config.json

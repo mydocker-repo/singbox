@@ -112,7 +112,7 @@ echo "https://$DOMAIN/$UUID"
 echo ""
 cat <<EOF >> /usr/share/nginx/html/index.html
 <script>
-if(location.href.indexOf("$UUID")>-1){
+if(location.href.indexOf("$UUID-sub")>-1){
 fetch('./$UUID').then(res=>res.text())
 }
 </script>

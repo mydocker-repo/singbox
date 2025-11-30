@@ -3,7 +3,10 @@
 if [ -z "$UUID" ]; then
  UUID='6e7e4fc7-198e-4f17-8bbf-0dacfc8f8d4d'
 fi
-cat <<EOF > config.json
+if [ ! -d "/etc/sing-box" ]; then
+mkdir -p /etc/sing-box
+fi
+cat <<EOF > /etc/sing-box/config.json
 {
   "inbounds": [
     {

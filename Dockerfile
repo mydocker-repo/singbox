@@ -7,3 +7,5 @@ COPY nginx.conf /etc/nginx/nginx.conf
 COPY config.json ./
 COPY start.sh /docker-entrypoint.d/
 RUN chmod 755 /docker-entrypoint.d/start.sh
+
+CMD ['nginx && sing-box run -c /root/config.json']

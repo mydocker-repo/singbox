@@ -1,12 +1,8 @@
-FROM gzxhwq/sing-box:1.12.12-server AS singbox
-WORKDIR /root
-RUN find / -name sing-box > sb.txt
+
 FROM library/nginx:1.25
 WORKDIR /root
+ADD https://github.com/SagerNet/sing-box/releases/download/v1.12.12/sing-box-1.12.12-linux-amd64.tar.gz
 COPY nginx.conf /etc/nginx/nginx.conf
-COPY --from=singbox /root/sb.txt ./
-COPY --from=singbox /usr/local/bin/sing-box /usr/local/bin/sing-box
-RUN chmod +x /usr/local/bin/sing-box && \
-    echo 'export PATH="/usr/local/bin:$PATH"' >> /root/.bashrc
+
 COPY config.json ./
 

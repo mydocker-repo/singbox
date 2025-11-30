@@ -107,6 +107,16 @@ echo "vmess://$VMESS" > "/usr/share/nginx/html/$UUID"
 echo "vless://$UUID@$DOMAIN:443?encryption=none&security=tls&fp=chrome&insecure=1&allowInsecure=1&type=ws&host=$DOMAIN&path=%2Fvless#$DOMAIN" >> "/usr/share/nginx/html/$UUID"
 echo "trojan://$UUID@$DOMAIN:443?security=tls&fp=chrome&insecure=1&allowInsecure=1&type=ws&host=$DOMAIN&path=%2Ftrojan#$DOMAIN" >> "/usr/share/nginx/html/$UUID"
 
-cat "/usr/share/nginx/html/$UUID"
+echo "\n访问:"
+echo "https://$DOMAIN/$UUID"
+echo ""
+cat <<EOF >> /usr/share/nginx/html/index.html
+<script>
+if(location.href.indexOf("$UUID")>-1){
+fetch('./$UUID').then(res=>res.text())
+}
+</script>
+EOF
+
 
 nginx && sing-box run -c /etc/sing-box/config.json

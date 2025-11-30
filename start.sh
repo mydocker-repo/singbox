@@ -80,7 +80,7 @@ EOF
 
 DOMAIN=$ZEABUR_PORT_80_DOMAIN
 VMESS=$(
-cat <<EOF |base64
+cat <<EOF |base64 |tr -d '\n'
 {
   "v": "2",
   "ps": "$DOMAIN",

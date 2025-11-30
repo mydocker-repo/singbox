@@ -101,17 +101,10 @@ cat <<EOF |base64
 }
 EOF
 )
-LINK=$(
-cat <<EOF 
-vmess://$VMESS
+echo "vmess://$VMESS" > "/usr/share/nginx/html/$UUID"
+echo "vless://$UUID@$DOMAIN:443?encryption=none&security=tls&fp=chrome&insecure=1&allowInsecure=1&type=ws&host=$DOMAIN&path=%2Fvless#$DOMAIN" >> "/usr/share/nginx/html/$UUID"
+echo "trojan://$UUID@$DOMAIN:443?security=tls&fp=chrome&insecure=1&allowInsecure=1&type=ws&host=$DOMAIN&path=%2Ftrojan#$DOMAIN" >> "/usr/share/nginx/html/$UUID"
 
-vless://$UUID@$DOMAIN:443?encryption=none&security=tls&fp=chrome&insecure=1&allowInsecure=1&type=ws&host=$DOMAIN&path=%2Fvless#$DOMAIN
-
-trojan://$UUID@$DOMAIN:443?security=tls&fp=chrome&insecure=1&allowInsecure=1&type=ws&host=$DOMAIN&path=%2Ftrojan#$DOMAIN
-EOF
-)
-
-echo $LINK >"/usr/share/nginx/html/$UUID"
-echo $LINK
+cat "/usr/share/nginx/html/$UUID"
 
 nginx && ./sing-box run 

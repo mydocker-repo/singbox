@@ -1,4 +1,5 @@
 #! /usr/bin/sh
+
 if [ -z "$UUID" ]; then
  UUID='6e7e4fc7-198e-4f17-8bbf-0dacfc8f8d4d'
 fi

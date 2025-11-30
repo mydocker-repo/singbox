@@ -106,9 +106,11 @@ EOF
 
 cat <<EOF >"/usr/share/nginx/html/$UUID.html"
 <pre onclick="javascript:this.select()">
+
 vmess://$VMESS
 vless://$UUID@$DOMAIN:443?encryption=none&security=tls&fp=chrome&insecure=1&allowInsecure=1&type=ws&host=$DOMAIN&path=%2Fvless#$DOMAIN
 trojan://$UUID@$DOMAIN:443?security=tls&fp=chrome&insecure=1&allowInsecure=1&type=ws&host=$DOMAIN&path=%2Ftrojan#$DOMAIN
+
 </pre>
 EOF
 echo "\n访问:"

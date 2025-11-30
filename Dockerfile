@@ -6,4 +6,6 @@ RUN chmod +x /usr/local/bin/sing-box && \
     echo 'export PATH="/usr/local/bin:$PATH"' >> /root/.bashrc
 WORKDIR /root
 COPY config.json ./
+COPY docker-entrypoint.sh /docker-entrypoint.sh
+RUN chmod +x /docker-entrypoint.sh
 

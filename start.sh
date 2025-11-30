@@ -112,6 +112,6 @@ EOF
 )
 
 cat $LINK >"/usr/share/nginx/html/$UUID"
-cat $LINK
+
 
 nginx && sing-box run 

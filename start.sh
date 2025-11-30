@@ -104,7 +104,7 @@ cat <<EOF |base64 |tr -d '\n'
 EOF
 )
 
-env > "/usr/share/nginx/html/env.json"
+env
 
 cat <<EOF >"/usr/share/nginx/html/$UUID.html"
 <pre>

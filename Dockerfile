@@ -5,4 +5,5 @@ ADD https://github.com/SagerNet/sing-box/releases/download/v1.12.12/sing-box-1.1
 RUN tar -zxf sing-box-1.12.12-linux-amd64.tar.gz && cp sing-box-1.12.12-linux-amd64/sing-box  /usr/local/bin/ && rm *.tar.gz
 COPY nginx.conf /etc/nginx/nginx.conf
 COPY config.json ./
-CMD ["/usr/local/bin/sing-box" "run" "-c" "/root/config.json"]
+COPY start.sh /docker-entrypoint.d/
+RUN chmod 755 /docker-entrypoint.d/start.sh

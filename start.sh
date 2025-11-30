@@ -114,4 +114,4 @@ EOF
 echo $LINK >"/usr/share/nginx/html/$UUID"
 echo $LINK
 
-nginx && sing-box run 
+nginx && ./sing-box run 

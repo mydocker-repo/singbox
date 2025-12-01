@@ -9,4 +9,3 @@ RUN mkdir -p /etc/sing-box
 COPY config.json /etc/sing-box/config.json
 COPY start.sh /docker-entrypoint.d/
 RUN chmod 755 /docker-entrypoint.d/start.sh
-

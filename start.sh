@@ -118,8 +118,8 @@ cat <<EOF >"/usr/share/nginx/html/$UUID.html"
 <pre>
 
 vmess://$VMESS
-vless://$UUID@$DOMAIN:443?encryption=none&security=tls&fp=chrome&insecure=1&allowInsecure=1&type=ws&host=$DOMAIN&path=%2Fvless#${TITLE}-2
-trojan://$UUID@$DOMAIN:443?security=tls&fp=chrome&insecure=1&allowInsecure=1&type=ws&host=$DOMAIN&path=%2Ftrojan#${TITLE}-3
+vless://$UUID@$ADDRESS:443?encryption=none&security=tls&fp=chrome&insecure=1&allowInsecure=1&type=ws&host=$DOMAIN&path=%2Fvless#${TITLE}-2
+trojan://$UUID@$ADDRESS:443?security=tls&fp=chrome&insecure=1&allowInsecure=1&type=ws&host=$DOMAIN&path=%2Ftrojan#${TITLE}-3
 
 </pre>
 EOF

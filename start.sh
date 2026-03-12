@@ -86,13 +86,16 @@ cat <<EOF > /etc/sing-box/config.json
 }
 EOF
 
-
+ADDRESS=$DOMAIN
+if [[ $DOMAIN != *railway.app ]];then 
+ ADDRESS="ip.sb"
+fi
 VMESS=$(
 cat <<EOF |base64 |tr -d '\n'
 {
   "v": "2",
   "ps": "${TITLE}-1",
-  "add": "$DOMAIN",
+  "add": "$ADDRESS",
   "port": "443",
   "id": "$UUID",
   "aid": "0",

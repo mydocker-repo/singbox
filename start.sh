@@ -80,10 +80,8 @@ cat <<EOF > /etc/sing-box/config.json
 }
 EOF
 
-DOMAIN=$ZEABUR_PORT_80_DOMAIN
-if [[ -z $DOMAIN ]]; then
- DOMAIN=$RAILWAY_PUBLIC_DOMAIN
-fi
+DOMAIN=$RAILWAY_PUBLIC_DOMAIN
+
 VMESS=$(
 cat <<EOF |base64 |tr -d '\n'
 {

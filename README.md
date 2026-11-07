@@ -1,3 +1,8 @@
+# 设置环境变量
+- UUID
+- DOMAIN   :容器提供的公共域名或自定义的cf域名
+> 查看部署日志： 里面有链接：   http://域名/UUID.html
+
 #railway 专用
 > start.sh
 ```bash
